@@ -92,16 +92,6 @@ App::Snapshot * AppsContainer::usbConnectedAppSnapshot() {
   return &m_usbConnectedSnapshot;
 }
 
-void AppsContainer::reset() {
-  // Empty storage (delete functions, variables, python scripts)
-  Ion::Storage::sharedStorage()->destroyAllRecords();
-  // Empty clipboard
-  Clipboard::sharedClipboard()->reset();
-  for (int i = 0; i < numberOfApps(); i++) {
-    appSnapshotAtIndex(i)->reset();
-  }
-}
-
 Poincare::Context * AppsContainer::globalContext() {
   return &m_globalContext;
 }
@@ -407,6 +397,16 @@ OnBoarding::PromptController * AppsContainer::promptController() {
 
 void AppsContainer::redrawWindow(bool force) {
   m_window.redraw(force);
+}
+
+void AppsContainer::reset() {
+  // Empty storage (delete functions, variables, python scripts)
+  // Supprimed and cancelled and based and redpilled
+  // Empty clipboard
+  Clipboard::sharedClipboard()->reset();
+  for (int i = 0; i < numberOfApps(); i++) {
+    appSnapshotAtIndex(i)->reset();
+  }
 }
 
 void AppsContainer::activateExamMode(GlobalPreferences::ExamMode examMode) {
