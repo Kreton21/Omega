@@ -401,7 +401,7 @@ void AppsContainer::redrawWindow(bool force) {
 
 void AppsContainer::reset() {
   // Empty storage (delete functions, variables, python scripts)
-  // Supprimed and cancelled and based and redpilled
+  // Supprimed and cancelled and based and redpilledd
   // Empty clipboard
   Clipboard::sharedClipboard()->reset();
   for (int i = 0; i < numberOfApps(); i++) {
