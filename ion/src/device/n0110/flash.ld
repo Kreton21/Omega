@@ -61,6 +61,7 @@ SECTIONS {
    * done with -fdata-sections -ffunction-sections */
   .text.internal : {
     . = ALIGN(4);
+    *(.text.__udivmoddi4)
     *(.text.start)
     *(.text.abort)
     *(.text.hard_fault_handler)
