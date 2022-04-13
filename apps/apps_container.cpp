@@ -232,6 +232,7 @@ bool AppsContainer::processEvent(Ion::Events::Event event) {
   if (event == Ion::Events::USBPlug) {
     if (Ion::USB::isPlugged()) {
       if (GlobalPreferences::sharedGlobalPreferences()->isInExamMode()) {
+        //<3
         displayExamModePopUp(GlobalPreferences::ExamMode::Off);
         window()->redraw();
       } else {
