@@ -1,13 +1,11 @@
 #include "about_controller.h"
 #include "../../../python/src/py/mpconfig.h"
-#include "exam_pop_up_controller.h"
-#include "exam_pop_up_controller_delegate.h"#include <assert.h>
 #include <cmath>
 #include <apps/settings/main_controller.h>
 #include <poincare/integer.h>
 #include <poincare/number.h>
 #include <ion/storage.h>
-
+#include <../apps_container.h>
 
 #include <poincare/preferences.h>
 
@@ -63,7 +61,7 @@ bool AboutController::handleEvent(Ion::Events::Event event) {
         } else {
           assert(strcmp(currentText, Ion::softwareVersion()) == 0);
           myCell->setAccessoryText(Ion::patchLevel());
-          displayExamModePopUp(GlobalPreferences::ExamMode::Off);
+          AppsContainer::sharedAppsContainer()->displayExamModePopUp(GlobalPreferences::ExamMode::Off);
         }
         return true;
       }
